@@ -1,0 +1,1183 @@
+@charset "UTF-8";
+/* ------ Estilos Base ------ */
+:root {
+  --extra-font-size: 3.5rem;
+  --extra-medium-font-size: 2.8rem;
+  --extra-small-font-size: 2.3rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --h4-font-size: 1.1rem;
+  --body-font-size: .9rem;
+  --small-font-size: .75rem;
+  --iconos-font-size: 3rem;
+  --iconos-font-size-small: 2rem;
+  --boton: 1.1rem;
+}
+@media screen and (min-width: 960px) {
+  :root {
+    --extra-font-size: 4rem;
+    --extra-medium-font-size: 3.5rem;
+    --extra-small-font-size: 3rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.1rem;
+    --body-font-size: 1rem;
+    --small-font-size: .8rem;
+    --iconos-font-size: 3.5rem;
+  }
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../../../fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("../../../fonts/Montserrat-Bold.woff") format("woff"), url("../../../fonts/Montserrat-Bold.ttf") format("truetype"), url("../../../fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../../../fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("../../../fonts/Montserrat-Regular.woff") format("woff"), url("../../../fonts/Montserrat-Regular.ttf") format("truetype"), url("../../../fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("../../../fonts/Montserrat-ExtraLight.eot");
+  src: local("☺"), url("../../../fonts/Montserrat-ExtraLight.woff") format("woff"), url("../../../fonts/Montserrat-ExtraLight.woff2") format("woff"), url("../../../fonts/Montserrat-ExtraLight.ttf") format("truetype"), url("../../../fonts/Montserrat-ExtraLight.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Swenson";
+  src: url("../../../fonts/swenson.eot");
+  src: local("☺"), url("../../../fonts/swenson.woff") format("woff"), url("../../../fonts/swenson.ttf") format("truetype"), url("../../../fonts/swenson.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 2200px) {
+  html {
+    font-size: 2rem;
+  }
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+body * {
+  font-family: "Montserrat-Regular", sans-serif, serif;
+  color: #313131;
+}
+
+p {
+  line-height: 1.7rem;
+}
+@media only screen and (min-width: 1285px) {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+.contenedor-principal {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 2200px) {
+  .contenedor-principal {
+    max-width: 2400px;
+  }
+}
+
+/* ------ Cabecera ------ */
+/*--- Animación menú hamburguesa ---*/
+@keyframes giraIzquierda {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes giraDerecha {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/*--- Fin animación menú hamburguesa ---*/
+.cabecera {
+  line-height: initial;
+  position: fixed;
+  width: 100%;
+  padding: 0.8rem 1.21rem;
+  transition: all 0.3s;
+  z-index: 2;
+  background-color: white;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.75);
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera {
+    box-shadow: initial;
+  }
+}
+.cabecera.cabeceraEncoge {
+  padding: 0.2rem 1.21rem;
+  transition: all 0.3s;
+  background-color: white;
+}
+.cabecera .contenedor-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal {
+    order: 1;
+    max-width: calc(100vw - 5%);
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .cabecera .contenedor-principal {
+    max-width: calc(100vw - 20%);
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal.contenedorPrincipalEncoge {
+    max-width: calc(100vw - 5%);
+    transition: all 0.2s;
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .cabecera .contenedor-principal.contenedorPrincipalEncoge {
+    max-width: calc(100vw - 20%);
+    transition: all 0.2s;
+  }
+}
+.cabecera .contenedor-principal a.link-logo {
+  text-decoration: none;
+  flex: 0 0 auto;
+  order: 2;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal a.link-logo {
+    order: 1;
+  }
+}
+.cabecera .contenedor-principal a.link-logo .logo img {
+  height: 30px;
+  transition: all 0.2s;
+}
+@media only screen and (min-width: 375px) {
+  .cabecera .contenedor-principal a.link-logo .logo img {
+    height: 40px;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .cabecera .contenedor-principal a.link-logo .logo img {
+    height: 80px;
+  }
+}
+.cabecera .contenedor-principal a.link-logo .logo img.logoEncoge {
+  height: 25px;
+  margin: 0.5rem 0;
+  transition: all 0.2s;
+}
+@media only screen and (min-width: 375px) {
+  .cabecera .contenedor-principal a.link-logo .logo img.logoEncoge {
+    height: 35px;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .cabecera .contenedor-principal a.link-logo .logo img.logoEncoge {
+    height: 70px;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera {
+  flex: 0 1 auto;
+  order: 1;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .botones {
+    display: none;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .botones .menu-hamburguesa {
+  font-size: 1.7rem;
+  color: #313131;
+}
+.cabecera .contenedor-principal .menu-cabecera .botones .menu-hamburguesa .fa-bars {
+  animation: giraIzquierda 0.5s;
+}
+.cabecera .contenedor-principal .menu-cabecera .botones .cerrar-menu-hamburguesa {
+  font-size: 2.31rem;
+  color: #313131;
+}
+.cabecera .contenedor-principal .menu-cabecera .botones .cerrar-menu-hamburguesa .fa-times {
+  display: none;
+  animation: giraDerecha 0.5s;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  padding: 0 0 1.5rem 1rem;
+  width: 90%;
+  height: 100vh;
+  transition: all 0.5s;
+  font-size: 1rem;
+  /*transparent para cabecera transparente*/
+  background-color: white;
+}
+@media only screen and (min-width: 768px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu {
+    position: static;
+    height: initial;
+    width: initial;
+    padding: 0;
+    color: transparent;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu .navMenuEncoge {
+  background-color: white;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu ul {
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul {
+    display: table;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul > li {
+    float: left;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li {
+  position: relative;
+  border-top: 1px solid rgba(217, 217, 217, 0.75);
+  list-style: none;
+  line-height: 2.5rem;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li:hover ul {
+    position: absolute;
+    opacity: 1;
+    overflow: visible;
+    max-height: 2000px;
+    background: white;
+    top: 130%;
+    margin-bottom: 1rem;
+  }
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li:hover ul.submenuEncoge {
+    top: 122%;
+  }
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li:hover i {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li:last-of-type {
+  border-bottom: 1px solid rgba(217, 217, 217, 0.75);
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li:last-of-type {
+    border: none;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li {
+    border: none;
+    padding: 0 0.2rem;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span {
+  display: flex;
+  align-items: center;
+  color: #313131;
+  transition: color 0.5s;
+  padding: 0 0.5rem;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span {
+    padding: 0 1rem;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span:hover {
+  color: #DF2632;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span .espacio-icono {
+  width: 35px;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span .espacio-icono {
+    display: none;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span > i {
+  margin-left: auto;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+  transition-delay: 0.2s, 4ms;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li span > i {
+    display: inline-block;
+    margin-left: 0.8rem;
+    margin-right: 0;
+    font-size: 0.7rem;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a {
+  display: flex;
+  align-items: center;
+  color: #313131;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a {
+    padding: 0 1rem;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a:hover {
+  color: #DF2632;
+  transition: color 0.2s;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a .espacio-icono {
+  width: 35px;
+  text-align: center;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a .espacio-icono {
+    display: none;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a .espacio-icono > i {
+  margin-left: auto;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+  transition-delay: 0.2s, 4ms;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul li a .espacio-icono > i {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  opacity: 1;
+  background: white;
+  transition: all 0.3s;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel {
+    position: absolute;
+    box-shadow: 0 10px 13px 1px rgba(0, 0, 0, 0.1);
+    top: 130%;
+    border-radius: 0 0 5px 5px;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel.submenuEncoge {
+  top: 122%;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel {
+    width: 230px;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel {
+    width: 11vw;
+  }
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li {
+  border: 0;
+  padding-left: 2.5rem;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li:first-of-type {
+  border-top: 1px solid rgba(217, 217, 217, 0.75);
+  padding-top: 0.3rem;
+}
+.cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li:last-of-type {
+  padding-bottom: 0.3rem;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li {
+    line-height: 3rem;
+    border-bottom: 1px solid rgba(217, 217, 217, 0.75);
+    padding-left: 0.3rem;
+  }
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li:first-of-type {
+    border-top: 0;
+  }
+  .cabecera .contenedor-principal .menu-cabecera .nav-menu > ul ul.submenu-segundo-nivel li:last-of-type {
+    padding-bottom: 0;
+  }
+}
+.cabecera .contenedor-principal .hablamos {
+  flex: 0 1 auto;
+  order: 3;
+  font-size: 2rem;
+  color: #DF2632;
+}
+@media only screen and (min-width: 1650px) {
+  .cabecera .contenedor-principal .hablamos {
+    margin-right: 6rem;
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .cabecera .contenedor-principal .hablamos.hablamosEncoge {
+    margin-right: 4rem;
+    transition: all 0.3s;
+  }
+}
+.cabecera .contenedor-principal .hablamos a#linkHablamos {
+  display: none;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .hablamos a#linkHablamos {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #DF2632;
+    color: #DF2632;
+    text-decoration: none;
+    width: auto;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .cabecera .contenedor-principal .hablamos a#linkHablamos:hover {
+    background-color: #DF2632;
+    color: white;
+  }
+}
+@media only screen and (min-width: 1285px) and (min-width: 2200px) {
+  .cabecera .contenedor-principal .hablamos a#linkHablamos {
+    border-radius: 15px;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .hablamos a#linkHablamos.linkHablamosEncoge {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+  }
+}
+.cabecera .contenedor-principal .hablamos a#enlace-icono-hablamos i {
+  color: #DF2632;
+  cursor: pointer;
+}
+@media only screen and (min-width: 1285px) {
+  .cabecera .contenedor-principal .hablamos a#enlace-icono-hablamos i {
+    display: none;
+  }
+}
+
+.cabecera.no-menu .nav-menu {
+  left: 0 !important;
+}
+
+/* ------ Fin cabecera ------ */
+/* ------ Footer ------ */
+footer.footer {
+  border-top: 2px solid rgba(217, 217, 217, 0.75);
+  background-color: rgba(105, 105, 105, 0.46);
+}
+footer.footer * {
+  color: #FAFAFA;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer {
+  padding: 4rem 0;
+  /* ---- CONTACTO ---- */
+  /* ---- MARCAS ---- */
+  /* ---- REDES SOCIALES ---- */
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-flow: column;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto {
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto section {
+  flex: 1;
+  margin-bottom: 4rem;
+}
+@media only screen and (min-width: 768px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto section {
+    flex: 0 1 calc(33.3333333333% - 5rem);
+  }
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto span {
+  font-family: "Montserrat-Bold", sans-serif, serif;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto div.icono i {
+  font-size: var(--iconos-font-size);
+  margin-bottom: 2rem;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto p.rotulo {
+  font-family: "Montserrat-Bold", sans-serif, serif;
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.informacion-contacto p {
+  line-height: 2rem;
+  margin: 0;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas {
+    justify-content: space-between;
+  }
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas section.marca {
+  flex: 0 1 calc(50% - 1rem);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas section.marca {
+    flex: 0 1 calc(25% - 1rem);
+  }
+}
+@media only screen and (min-width: 1285px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas section.marca {
+    flex: initial;
+  }
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.marcas section.marca img {
+  height: 40px;
+  filter: brightness(3);
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer ul {
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+}
+@media only screen and (min-width: 768px) {
+  footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer ul {
+    margin-bottom: initial;
+  }
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6rem;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li:first-of-type {
+  margin-top: 0;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li:first-of-type span {
+  display: inline-block;
+  font-family: "Montserrat-Bold", sans-serif, serif;
+  text-transform: uppercase;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li div.barrita-subraya-color {
+  margin: 0.5rem auto;
+  vertical-align: middle;
+  background: #FAFAFA;
+  border-radius: 5px;
+  width: 140px;
+  height: 3px;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li ul.iconos-redes {
+  display: flex;
+  justify-content: center;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li ul.iconos-redes li {
+  margin: 1rem 0.5rem 0;
+}
+footer.footer div.contenedor-principal section.contenedor-bloques-footer article.redes-sociales-footer li ul.iconos-redes i {
+  font-size: var(--iconos-font-size-small);
+}
+footer.footer .copyright {
+  background-color: #313131;
+  text-align: center;
+}
+footer.footer .copyright a {
+  color: #EEDBAD;
+}
+footer.footer .copyright p {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  color: white;
+  margin: 0;
+}
+
+/* ------ Fin Footer ------ */
+/* ------ Fin Estilos Base ------ */
+/* ------ Comentarios clientes ------ */
+.bloque_cabecera_paginas {
+  position: relative;
+  background-color: #d5d5d5;
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0) 100%, white 90%), url("../../../img/01_paginas/servicios/corte/peluqueria-corte-Linares-01.png");
+  background-attachment: inherit;
+  background-position: right top;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  height: 30vh;
+}
+@media only screen and (min-width: 768px) {
+  .bloque_cabecera_paginas {
+    height: 35vh;
+    background-position: center top;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .bloque_cabecera_paginas {
+    min-height: 30vh;
+    background-size: cover;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .bloque_cabecera_paginas {
+    background-size: 100%;
+    height: 80vh;
+  }
+}
+.bloque_cabecera_paginas .contenedor-principal {
+  text-align: center;
+  /* ---------------------------------- TEXTO CENTRAL ------------------------- */
+}
+.bloque_cabecera_paginas .contenedor-principal .textos-central {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #313131;
+  /* ------------------------------------ H1 ----------------------------------------- */
+  /* ------------------------------------ P ----------------------------------------- */
+}
+@media only screen and (min-width: 375px) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central {
+    top: 40%;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central {
+    top: 30%;
+  }
+}
+.bloque_cabecera_paginas .contenedor-principal .textos-central h1.titulo-web {
+  font-size: 2.7rem;
+  font-family: "Montserrat-Regular", sans-serif, serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 0.7rem;
+  /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+  /* ----------- iPad Pro 12.9" ----------- */
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central h1.titulo-web {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central h1.titulo-web {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central h1.titulo-web {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+.bloque_cabecera_paginas .contenedor-principal .textos-central .subtitulo-web {
+  font-size: var(--h1-font-size);
+  font-family: Swenson, sans-serif;
+  margin: 0;
+  color: #B27D53;
+  /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+  /* ----------- iPad Pro 12.9" ----------- */
+  /* ----------- Desktop ----------- */
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central .subtitulo-web {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central .subtitulo-web {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .bloque_cabecera_paginas .contenedor-principal .textos-central .subtitulo-web {
+    margin-bottom: 3rem;
+  }
+}
+
+.nosotros .bloque_cabecera_paginas {
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0) 100%, white 90%), url("../../../img/01_paginas/nosotros/mejor-peluqueria-jaen-novias.png");
+}
+
+.contacto .bloque_cabecera_paginas {
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0) 100%, white 90%), url("../../../img/01_paginas/contacto/peluqueria-contacto-Linares.png");
+}
+.contacto .subtitulo-web {
+  color: #DF2632 !important;
+}
+
+/* ------ Fin Comentarios clientes ------ */
+/* ------ Formulario Contacto ------ */
+.contacto section.bloque-formulario-contacto {
+  background-color: #F9F8F8;
+  padding: 3rem 0;
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto {
+    padding: 6rem 0 8rem;
+  }
+}
+.contacto section.bloque-formulario-contacto h4 {
+  text-align: center;
+  font-weight: 100;
+  font-family: "Montserrat-ExtraLight", sans-serif, serif;
+  margin-bottom: 1rem;
+  font-size: var(--h2-font-size);
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto h3.encabezado {
+  font-family: "Montserrat-Regular", sans-serif, serif;
+  font-size: var(--h1-font-size);
+  text-transform: uppercase;
+  text-align: left;
+  margin: 2rem 0;
+  width: 100% !important;
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto h3.encabezado {
+    margin-bottom: 2rem;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto article.barrita-estrella {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto article.barrita-estrella div.barrita-subraya-color {
+  vertical-align: middle;
+  background: #DF2632;
+  border-radius: 5px;
+  width: 140px;
+  height: 5px;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto article.barrita-estrella .estrellita {
+  margin-left: 0.3rem;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.textos-contacto article.barrita-estrella .estrellita i {
+  color: #DF2632;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal p {
+  text-align: justify;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(min-content, max-content) 1fr;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto {
+  grid-column: 1/2;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(217, 217, 217, 0.75);
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto div.cabecera-formulario-contacto {
+  background: #DF2632;
+  border-radius: 5px 5px 0 0;
+  padding: 1.5rem 1rem;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto div.cabecera-formulario-contacto h4 {
+  color: white;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto div.cabecera-formulario-contacto p {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 2rem;
+  overflow: hidden;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input:-webkit-autofill,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input:-webkit-autofill:hover,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input:-webkit-autofill:focus,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea:-webkit-autofill,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea:-webkit-autofill:hover,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea:-webkit-autofill:focus,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto select:-webkit-autofill,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto select:-webkit-autofill:hover,
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(105, 105, 105, 0.46);
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input, .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.75);
+  padding: 2rem 0.5rem 0.5rem;
+  color: rgba(105, 105, 105, 0.46);
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input:focus, .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea:focus {
+  outline: none;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto input::placeholder, .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto textarea::placeholder {
+  color: #ababab;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto .nombre label input {
+  width: 100%;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto .asunto label input {
+  width: 100%;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email {
+    flex-flow: row;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .email {
+  width: 100%;
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .email {
+    width: 70%;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .email label input {
+  width: 100%;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .telefono {
+  width: 100%;
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .telefono {
+    width: 25%;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto div.telefono-email .telefono label input {
+  width: 100%;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto .form-text-area label textarea {
+  height: 180px;
+  padding: initial;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto .form-text-area label textarea#idMensaje {
+  padding: 0 0.5rem 0.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.5;
+  resize: none;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica {
+  margin-top: 1rem;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad {
+  margin: 0 0.5rem 1rem;
+  font-size: var(--small-font-size);
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad input {
+  display: inline-block;
+  vertical-align: middle;
+  background: #DF2632;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad input::selection {
+  background: #DF2632;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.4rem;
+}
+@media only screen and (min-width: 375px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad label {
+    font-size: 0.6rem;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .privacidad label a {
+  color: #DF2632;
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .boton-idea {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 1285px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .boton-idea {
+    margin-bottom: initial;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .boton-idea button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  background: #DF2632;
+  border: 1px solid #DF2632;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.formulario-contacto form.formulario-contacto section.boton-politica .boton-idea button:hover {
+  background: white;
+  border: 1px solid #DF2632;
+  color: #DF2632;
+  box-shadow: 0 2px 4px rgba(217, 217, 217, 0.75);
+  cursor: pointer;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto {
+  grid-column: 1/2;
+  padding: 1.5rem 2rem 1rem;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(217, 217, 217, 0.75);
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto p {
+    text-align: initial;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto p span {
+  font-family: "Montserrat-Bold", sans-serif, serif;
+  font-size: var(--small-font-size);
+}
+@media only screen and (min-width: 375px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.contactanos-contacto p span {
+    font-size: initial;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.mapa {
+  grid-column: 1/2;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(217, 217, 217, 0.75);
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.mapa {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.mapa div.estilo-mapa {
+  height: 100%;
+  width: 100%;
+}
+.contacto section.bloque-formulario-contacto article.contenedor-principal section.contenedores-contacto article.mapa div.estilo-mapa iframe {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.contacto section.boton-ubicacion {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .contacto section.boton-ubicacion {
+    display: none;
+  }
+}
+.contacto section.boton-ubicacion a.abrir-ubicacion {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  background-color: #DF2632;
+  padding: 0.5rem 2rem;
+  color: white;
+  border-radius: 5px;
+}
+.contacto section.boton-ubicacion a.abrir-ubicacion i {
+  font-size: 2rem;
+  color: #FAFAFA;
+}
+
+.main-contenido .no-mostrar-mensaje-mail-enviado {
+  visibility: hidden;
+  opacity: 0 !important;
+  position: absolute;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+.main-contenido .mostrar-mensaje-mail-enviado {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #0c5460;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(194, 194, 194, 0.66);
+  transition: visibility 0s, opacity 0.3s linear;
+  padding: 2rem;
+}
+@media only screen and (min-width: 1285px) {
+  .main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje {
+    width: 40%;
+  }
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje i.fal.fa-times {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #DF2632;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje i.fal.fa-check-circle {
+  font-size: 5rem;
+  color: #DF2632;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje p:first-of-type {
+  font-size: var(--h3-font-size);
+  margin: 2rem 0 1rem;
+  color: #DF2632;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje p:last-of-type {
+  margin: 0 0 2rem;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje a.boton-cerrar {
+  background: #DF2632;
+  color: white;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(194, 194, 194, 0.89);
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Montserrat-Bold", sans-serif, serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.main-contenido .mostrar-mensaje-mail-enviado .contenedor-mensaje a.boton-cerrar:hover {
+  background: white;
+  color: #DF2632;
+  box-shadow: 0 0 1px 1px #DF2632;
+}
+
+/* ------ Fin formulario Contacto ------ */
+
+/*# sourceMappingURL=styles.css.map */
